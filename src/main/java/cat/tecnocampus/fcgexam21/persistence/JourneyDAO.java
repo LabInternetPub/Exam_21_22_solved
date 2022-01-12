@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @Repository
-public class JourneyDAO {
+public class JourneyDAO implements cat.tecnocampus.fcgexam21.application.persistence.JourneyDAO {
     JdbcTemplate jdbcTemplate;
     StationDAO stationDAO;
 

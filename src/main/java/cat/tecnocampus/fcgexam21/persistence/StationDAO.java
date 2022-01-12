@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class StationDAO {
+public class StationDAO implements cat.tecnocampus.fcgexam21.application.persistence.StationDAO {
 
     private final JdbcTemplate jdbcTemplate;
 

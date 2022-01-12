@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Repository
-public class FavoriteJourneyDAO {
+public class FavoriteJourneyDAO implements cat.tecnocampus.fcgexam21.application.persistence.FavoriteJourneyDAO {
     JdbcTemplate jdbcTemplate;
     JourneyDAO journeyDAO;
 

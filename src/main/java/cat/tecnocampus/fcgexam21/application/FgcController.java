@@ -6,7 +6,7 @@ import cat.tecnocampus.fcgexam21.application.DTOs.FavoriteJourneyDTO;
 import cat.tecnocampus.fcgexam21.application.DTOs.FriendsDTO;
 import cat.tecnocampus.fcgexam21.application.exception.UserDoesNotExistsException;
 import cat.tecnocampus.fcgexam21.domain.*;
-import cat.tecnocampus.fcgexam21.persistence.*;
+import cat.tecnocampus.fcgexam21.application.persistence.*;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

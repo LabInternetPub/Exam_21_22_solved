@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class UserDAO {
+public class UserDAO implements cat.tecnocampus.fcgexam21.application.persistence.UserDAO {
 
     private final JdbcTemplate jdbcTemplate;
 

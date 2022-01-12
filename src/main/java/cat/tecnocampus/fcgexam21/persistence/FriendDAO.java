@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Repository
-public class FriendDAO {
+public class FriendDAO implements cat.tecnocampus.fcgexam21.application.persistence.FriendDAO {
     private JdbcTemplate jdbcTemplate;
 
     ResultSetExtractorImpl<Friends> friendsRowMapper =
@@ -29,21 +29,21 @@ public class FriendDAO {
         List<Friends> result;
         String query = "select * from friend where username = ?";
 
-        result =  jdbcTemplate.query(query, friendsRowMapper, username);
+        result = jdbcTemplate.query(query, friendsRowMapper, username);
         return result.get(0);
     }
 
     public List<Friends> getFriends() {
         String query = "select * from friend";
-        return  jdbcTemplate.query(query, friendsRowMapper);
+        return jdbcTemplate.query(query, friendsRowMapper);
     }
 
     //TODO 4.1 insert new friends to the data base. Note that a Friends object has a list of friends. So, you need to inset
     // a new row foreach friend. Use a batch update in order to do a unique commit to the database
-    public int[] saveFriends(Friends friends) {
+    public void saveFriends(Friends friends) {
         String query = "insert into friend(username, friend) values(?, ?)";
 
-        return jdbcTemplate.batchUpdate(query,
+        jdbcTemplate.batchUpdate(query,
                 new BatchPreparedStatementSetter() {
                     @Override
                     public void setValues(PreparedStatement preparedStatement, int i) throws SQLException {
